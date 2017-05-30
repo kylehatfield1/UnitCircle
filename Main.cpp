@@ -1,10 +1,13 @@
 #include <iostream>
+#include "Circle.h"
+
 using namespace std;
 
 int main()
 {
+	Circle circleObj;
 	int x = 0;
-	cout << "Hello World" << endl;
+	circleObj.Print();
 	cin >> x;
 	return 0;
 }
