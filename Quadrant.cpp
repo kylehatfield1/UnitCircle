@@ -1,4 +1,5 @@
 #include "Quadrant.h"
+#include <iostream>
 
 
 
@@ -31,14 +32,16 @@ void Quadrant::setRadianPositions(int quadPosition)
 void Quadrant::setDegreePositions(int quadPosition)
 {
 	int degreeBase;
-	if (quadPosition == 1 || 2)
+	if (quadPosition == 1 || quadPosition == 2)
 	{
 		degreeBase = (quadPosition - 1) * 30;
 	}
 	else
 	{
-
+		degreeBase = ((quadPosition - 2) * 15) + 30;
 	}
 
 	degreePosition[quadPosition] = ((quadrantNumber - 1) * 90) + degreeBase;
+	
+	cout << "Quadrant: " << quadrantNumber << endl << "QuadPosition: " << quadPosition << endl << "Degree Value set to: " << degreePosition[quadPosition] << endl;
 }
