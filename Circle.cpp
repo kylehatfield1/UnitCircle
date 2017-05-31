@@ -13,8 +13,3 @@ Circle::Circle()
 Circle::~Circle()
 {
 }
-
-void Circle::Print()
-{
-	cout << "Inside Circle Class Print()" << endl;
-}

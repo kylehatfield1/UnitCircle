@@ -3,6 +3,7 @@
 
 
 
+
 Quadrant::Quadrant(int quadNumber)
 {
 	quadrantNumber = quadNumber;
@@ -17,18 +18,6 @@ Quadrant::~Quadrant()
 {
 }
 
-void Quadrant::setRadianPositions(int quadPosition)
-{
-	switch (quadrantNumber)
-	{
-	case 1:
-		radianPosition[quadPosition] = to_string(42);
-	default:
-		break;
-	}	
-}
-
-
 void Quadrant::setDegreePositions(int quadPosition)
 {
 	int degreeBase;
@@ -42,6 +31,38 @@ void Quadrant::setDegreePositions(int quadPosition)
 	}
 
 	degreePosition[quadPosition] = ((quadrantNumber - 1) * 90) + degreeBase;
-	
+
 	cout << "Quadrant: " << quadrantNumber << endl << "QuadPosition: " << quadPosition << endl << "Degree Value set to: " << degreePosition[quadPosition] << endl;
 }
+
+void Quadrant::setRadianPositions(int quadPosition)
+{	
+	int degree = degreePosition[quadPosition];
+	if (degree == 0)
+	{
+		radianPosition[quadPosition] = "0";
+		return;
+	}
+
+	string numerator;
+	string denominator;
+	switch (quadrantNumber)
+	{
+	case 1:
+		numerator = "pi";
+		denominator = "/" + to_string(180 / degree);
+		break;
+	case 2:
+		if (quadPosition == 1)
+		{
+			denominator = "/2";
+		}
+		else
+		{
+			
+		}
+
+	}
+}
+
+

@@ -17,7 +17,8 @@ private:
 	map <string, string> cosValues;
 	map <string, string> tanValues;
 
-public:
 	void setDegreePositions(int quadPosition);
+
+public:
 	void setRadianPositions(int quadPosition);
 };
